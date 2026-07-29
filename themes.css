@@ -1,0 +1,985 @@
+/* ==========================================================
+   BreatheRun theme palettes
+
+   GENERATED FILE — do not edit by hand.
+   Source:     brand-guidelines.md, in the brand asset pack
+   Regenerate: python3 tools/build-themes.py
+
+   To change the active theme, run:
+       ./tools/switch-theme.sh <theme>
+   which sets data-theme on each page and swaps the matching
+   favicons, logo, social preview and manifest colours.
+
+   18 themes: ocean, azure, midnight, sunrise, forest, graphite, frost, ice, snow, evergreen, holly, gold, copper, maple, chestnut, pumpkin, midnight-orange, witching-hour
+   ========================================================== */
+
+
+/* Default, so the site still renders with no data-theme set. */
+
+:root {
+
+    /* 🌊 Ocean */
+
+    /* Brand ramp (the mark's ring gradient) */
+
+    --ring-start:       #2A6CF6;
+    --ring-mid:         #3AA5F5;
+    --ring-end:         #1EC8B0;
+    --dot:              #1EC8B0;
+
+    /* Roles */
+
+    --primary:          #3AA5F5;
+    --primary-dark:     #2A6CF6;
+    --primary-soft:     #87C6F5;
+    --primary-text:     #3AA5F5;
+    --primary-rgb:      58,165,245;
+    --accent:           #1EC8B0;
+
+    /* Launcher plate gradient, for decorative brand fills */
+
+    --plate-start:      #1268E4;
+    --plate-mid:        #0B7FC9;
+    --plate-end:        #12AFA6;
+
+    /* Darker cut of the plate ramp, for fills that carry text */
+
+    --plate-ink-start:  #1268E4;
+    --plate-ink-mid:    #0B7BC3;
+    --plate-ink-end:    #0E837C;
+    --on-plate:         #FFFFFF;
+
+    /* Surfaces */
+
+    --bg:               #07111F;
+    --bg-rgb:           7,17,31;
+    --bg-alt:           #101C2E;
+    --surface:          #18253B;
+    --surface-hover:    #23334E;
+    --surface-deep:     #050B14;
+
+    /* Type */
+
+    --text:             #E6EEF5;
+    --text-secondary:   #B5BDC6;
+    --text-muted:       #828B95;
+
+}
+
+
+[data-theme="ocean"] {
+
+    /* 🌊 Ocean */
+
+    /* Brand ramp (the mark's ring gradient) */
+
+    --ring-start:       #2A6CF6;
+    --ring-mid:         #3AA5F5;
+    --ring-end:         #1EC8B0;
+    --dot:              #1EC8B0;
+
+    /* Roles */
+
+    --primary:          #3AA5F5;
+    --primary-dark:     #2A6CF6;
+    --primary-soft:     #87C6F5;
+    --primary-text:     #3AA5F5;
+    --primary-rgb:      58,165,245;
+    --accent:           #1EC8B0;
+
+    /* Launcher plate gradient, for decorative brand fills */
+
+    --plate-start:      #1268E4;
+    --plate-mid:        #0B7FC9;
+    --plate-end:        #12AFA6;
+
+    /* Darker cut of the plate ramp, for fills that carry text */
+
+    --plate-ink-start:  #1268E4;
+    --plate-ink-mid:    #0B7BC3;
+    --plate-ink-end:    #0E837C;
+    --on-plate:         #FFFFFF;
+
+    /* Surfaces */
+
+    --bg:               #07111F;
+    --bg-rgb:           7,17,31;
+    --bg-alt:           #101C2E;
+    --surface:          #18253B;
+    --surface-hover:    #23334E;
+    --surface-deep:     #050B14;
+
+    /* Type */
+
+    --text:             #E6EEF5;
+    --text-secondary:   #B5BDC6;
+    --text-muted:       #828B95;
+
+}
+
+
+[data-theme="azure"] {
+
+    /* 🔵 Azure */
+
+    /* Brand ramp (the mark's ring gradient) */
+
+    --ring-start:       #1E4FD8;
+    --ring-mid:         #2F8FF5;
+    --ring-end:         #5FC8FF;
+    --dot:              #5FC8FF;
+
+    /* Roles */
+
+    --primary:          #2F8FF5;
+    --primary-dark:     #1E4FD8;
+    --primary-soft:     #7DB8F8;
+    --primary-text:     #2F8FF5;
+    --primary-rgb:      47,143,245;
+    --accent:           #5FC8FF;
+
+    /* Launcher plate gradient, for decorative brand fills */
+
+    --plate-start:      #0B3FA8;
+    --plate-mid:        #1568D6;
+    --plate-end:        #2E9BEA;
+
+    /* Darker cut of the plate ramp, for fills that carry text */
+
+    --plate-ink-start:  #0B3FA8;
+    --plate-ink-mid:    #1568D6;
+    --plate-ink-end:    #247AB9;
+    --on-plate:         #FFFFFF;
+
+    /* Surfaces */
+
+    --bg:               #04101F;
+    --bg-rgb:           4,16,31;
+    --bg-alt:           #0C1A2D;
+    --surface:          #142239;
+    --surface-hover:    #1F2F4C;
+    --surface-deep:     #030A14;
+
+    /* Type */
+
+    --text:             #DCEBFB;
+    --text-secondary:   #ACBBCB;
+    --text-muted:       #7B8898;
+
+}
+
+
+[data-theme="midnight"] {
+
+    /* 🌙 Midnight */
+
+    /* Brand ramp (the mark's ring gradient) */
+
+    --ring-start:       #4B4DED;
+    --ring-mid:         #7A6CF0;
+    --ring-end:         #A78BFA;
+    --dot:              #A78BFA;
+
+    /* Roles */
+
+    --primary:          #7A6CF0;
+    --primary-dark:     #4B4DED;
+    --primary-soft:     #AAA1F7;
+    --primary-text:     #7A6CF0;
+    --primary-rgb:      122,108,240;
+    --accent:           #A78BFA;
+
+    /* Launcher plate gradient, for decorative brand fills */
+
+    --plate-start:      #1B1B3A;
+    --plate-mid:        #2B2464;
+    --plate-end:        #4438A8;
+
+    /* Darker cut of the plate ramp, for fills that carry text */
+
+    --plate-ink-start:  #1B1B3A;
+    --plate-ink-mid:    #2B2464;
+    --plate-ink-end:    #4438A8;
+    --on-plate:         #FFFFFF;
+
+    /* Surfaces */
+
+    --bg:               #0A0A1A;
+    --bg-rgb:           10,10,26;
+    --bg-alt:           #141429;
+    --surface:          #1C1C37;
+    --surface-hover:    #29294A;
+    --surface-deep:     #060611;
+
+    /* Type */
+
+    --text:             #E4E1FF;
+    --text-secondary:   #B4B2CD;
+    --text-muted:       #828098;
+
+}
+
+
+[data-theme="sunrise"] {
+
+    /* 🌅 Sunrise */
+
+    /* Brand ramp (the mark's ring gradient) */
+
+    --ring-start:       #FF9E2C;
+    --ring-mid:         #FF7A45;
+    --ring-end:         #FF5F6D;
+    --dot:              #FF5F6D;
+
+    /* Roles */
+
+    --primary:          #FF7A45;
+    --primary-dark:     #FF9E2C;
+    --primary-soft:     #FFAC86;
+    --primary-text:     #FF7A45;
+    --primary-rgb:      255,122,69;
+    --accent:           #FF5F6D;
+
+    /* Launcher plate gradient, for decorative brand fills */
+
+    --plate-start:      #C2410C;
+    --plate-mid:        #EA6A1E;
+    --plate-end:        #F59E0B;
+
+    /* Darker cut of the plate ramp, for fills that carry text */
+
+    --plate-ink-start:  #C2410C;
+    --plate-ink-mid:    #C05719;
+    --plate-ink-end:    #A46A07;
+    --on-plate:         #FFFFFF;
+
+    /* Surfaces */
+
+    --bg:               #1A0E07;
+    --bg-rgb:           26,14,7;
+    --bg-alt:           #2A1B0F;
+    --surface:          #382617;
+    --surface-hover:    #4C3622;
+    --surface-deep:     #110905;
+
+    /* Type */
+
+    --text:             #FFEAD5;
+    --text-secondary:   #CDBAA8;
+    --text-muted:       #988778;
+
+}
+
+
+[data-theme="forest"] {
+
+    /* 🌲 Forest */
+
+    /* Brand ramp (the mark's ring gradient) */
+
+    --ring-start:       #1E9E5A;
+    --ring-mid:         #2FBF71;
+    --ring-end:         #86D97F;
+    --dot:              #86D97F;
+
+    /* Roles */
+
+    --primary:          #2FBF71;
+    --primary-dark:     #1E9E5A;
+    --primary-soft:     #7DD6A5;
+    --primary-text:     #2FBF71;
+    --primary-rgb:      47,191,113;
+    --accent:           #86D97F;
+
+    /* Launcher plate gradient, for decorative brand fills */
+
+    --plate-start:      #0B3D2E;
+    --plate-mid:        #14664A;
+    --plate-end:        #2FA36B;
+
+    /* Darker cut of the plate ramp, for fills that carry text */
+
+    --plate-ink-start:  #0B3D2E;
+    --plate-ink-mid:    #14664A;
+    --plate-ink-end:    #278658;
+    --on-plate:         #FFFFFF;
+
+    /* Surfaces */
+
+    --bg:               #06140F;
+    --bg-rgb:           6,20,15;
+    --bg-alt:           #0E2119;
+    --surface:          #162B22;
+    --surface-hover:    #203C2F;
+    --surface-deep:     #040D0A;
+
+    /* Type */
+
+    --text:             #DDF3E5;
+    --text-secondary:   #AEC2B6;
+    --text-muted:       #7C8F85;
+
+}
+
+
+[data-theme="graphite"] {
+
+    /* ⚫ Graphite */
+
+    /* Brand ramp (the mark's ring gradient) */
+
+    --ring-start:       #6B7280;
+    --ring-mid:         #9CA3AF;
+    --ring-end:         #D1D5DB;
+    --dot:              #E5E7EB;
+
+    /* Roles */
+
+    --primary:          #9CA3AF;
+    --primary-dark:     #6B7280;
+    --primary-soft:     #BDC2CA;
+    --primary-text:     #9CA3AF;
+    --primary-rgb:      156,163,175;
+    --accent:           #D1D5DB;
+
+    /* Launcher plate gradient, for decorative brand fills */
+
+    --plate-start:      #111827;
+    --plate-mid:        #1F2937;
+    --plate-end:        #374151;
+
+    /* Darker cut of the plate ramp, for fills that carry text */
+
+    --plate-ink-start:  #111827;
+    --plate-ink-mid:    #1F2937;
+    --plate-ink-end:    #374151;
+    --on-plate:         #FFFFFF;
+
+    /* Surfaces */
+
+    --bg:               #0B0F14;
+    --bg-rgb:           11,15,20;
+    --bg-alt:           #161A1F;
+    --surface:          #1F2329;
+    --surface-hover:    #2E3238;
+    --surface-deep:     #070A0D;
+
+    /* Type */
+
+    --text:             #E5E7EB;
+    --text-secondary:   #B5B7BC;
+    --text-muted:       #83868A;
+
+}
+
+
+[data-theme="frost"] {
+
+    /* ❄️ Frost */
+
+    /* Brand ramp (the mark's ring gradient) */
+
+    --ring-start:       #38BDF8;
+    --ring-mid:         #7DD3FC;
+    --ring-end:         #E0F2FE;
+    --dot:              #E0F2FE;
+
+    /* Roles */
+
+    --primary:          #7DD3FC;
+    --primary-dark:     #38BDF8;
+    --primary-soft:     #AAE1FD;
+    --primary-text:     #7DD3FC;
+    --primary-rgb:      125,211,252;
+    --accent:           #E0F2FE;
+
+    /* Launcher plate gradient, for decorative brand fills */
+
+    --plate-start:      #0C4A6E;
+    --plate-mid:        #0E7490;
+    --plate-end:        #38BDF8;
+
+    /* Darker cut of the plate ramp, for fills that carry text */
+
+    --plate-ink-start:  #0C4A6E;
+    --plate-ink-mid:    #0E7490;
+    --plate-ink-end:    #257DA4;
+    --on-plate:         #FFFFFF;
+
+    /* Surfaces */
+
+    --bg:               #061722;
+    --bg-rgb:           6,23,34;
+    --bg-alt:           #0F2531;
+    --surface:          #17303E;
+    --surface-hover:    #234152;
+    --surface-deep:     #040F16;
+
+    /* Type */
+
+    --text:             #E0F2FE;
+    --text-secondary:   #B0C2CE;
+    --text-muted:       #7E8F9B;
+
+}
+
+
+[data-theme="ice"] {
+
+    /* 🧊 Ice */
+
+    /* Brand ramp (the mark's ring gradient) */
+
+    --ring-start:       #22D3EE;
+    --ring-mid:         #67E8F9;
+    --ring-end:         #CFFAFE;
+    --dot:              #67E8F9;
+
+    /* Roles */
+
+    --primary:          #67E8F9;
+    --primary-dark:     #22D3EE;
+    --primary-soft:     #96F0FB;
+    --primary-text:     #67E8F9;
+    --primary-rgb:      103,232,249;
+    --accent:           #CFFAFE;
+
+    /* Launcher plate gradient, for decorative brand fills */
+
+    --plate-start:      #ECFEFF;
+    --plate-mid:        #CFFAFE;
+    --plate-end:        #A5F3FC;
+
+    /* Darker cut of the plate ramp, for fills that carry text */
+
+    --plate-ink-start:  #ECFEFF;
+    --plate-ink-mid:    #CFFAFE;
+    --plate-ink-end:    #A5F3FC;
+    --on-plate:         #06323D;
+
+    /* Surfaces */
+
+    --bg:               #062028;
+    --bg-rgb:           6,32,40;
+    --bg-alt:           #0E2E36;
+    --surface:          #153A43;
+    --surface-hover:    #1F4C55;
+    --surface-deep:     #04151A;
+
+    /* Type */
+
+    --text:             #CFFAFE;
+    --text-secondary:   #A3CACF;
+    --text-muted:       #75989E;
+
+}
+
+
+[data-theme="snow"] {
+
+    /* ⛄ Snow */
+
+    /* Brand ramp (the mark's ring gradient) */
+
+    --ring-start:       #94A3B8;
+    --ring-mid:         #CBD5E1;
+    --ring-end:         #F8FAFC;
+    --dot:              #F8FAFC;
+
+    /* Roles */
+
+    --primary:          #CBD5E1;
+    --primary-dark:     #94A3B8;
+    --primary-soft:     #DCE3EC;
+    --primary-text:     #CBD5E1;
+    --primary-rgb:      203,213,225;
+    --accent:           #F8FAFC;
+
+    /* Launcher plate gradient, for decorative brand fills */
+
+    --plate-start:      #FFFFFF;
+    --plate-mid:        #F1F5F9;
+    --plate-end:        #DCE7F0;
+
+    /* Darker cut of the plate ramp, for fills that carry text */
+
+    --plate-ink-start:  #FFFFFF;
+    --plate-ink-mid:    #F1F5F9;
+    --plate-ink-end:    #DCE7F0;
+    --on-plate:         #0F172A;
+
+    /* Surfaces */
+
+    --bg:               #0B1220;
+    --bg-rgb:           11,18,32;
+    --bg-alt:           #181F2D;
+    --surface:          #232A38;
+    --surface-hover:    #333B48;
+    --surface-deep:     #070C15;
+
+    /* Type */
+
+    --text:             #F1F5F9;
+    --text-secondary:   #BEC3C9;
+    --text-muted:       #8A8F97;
+
+}
+
+
+[data-theme="evergreen"] {
+
+    /* 🎄 Evergreen */
+
+    /* Brand ramp (the mark's ring gradient) */
+
+    --ring-start:       #14532D;
+    --ring-mid:         #16A34A;
+    --ring-end:         #4ADE80;
+    --dot:              #FACC15;
+
+    /* Roles */
+
+    --primary:          #16A34A;
+    --primary-dark:     #14532D;
+    --primary-soft:     #6FCB91;
+    --primary-text:     #16A34A;
+    --primary-rgb:      22,163,74;
+    --accent:           #4ADE80;
+
+    /* Launcher plate gradient, for decorative brand fills */
+
+    --plate-start:      #052E16;
+    --plate-mid:        #14532D;
+    --plate-end:        #166534;
+
+    /* Darker cut of the plate ramp, for fills that carry text */
+
+    --plate-ink-start:  #052E16;
+    --plate-ink-mid:    #14532D;
+    --plate-ink-end:    #166534;
+    --on-plate:         #FFFFFF;
+
+    /* Surfaces */
+
+    --bg:               #04170B;
+    --bg-rgb:           4,23,11;
+    --bg-alt:           #0C2114;
+    --surface:          #132A1C;
+    --surface-hover:    #1E3727;
+    --surface-deep:     #030F07;
+
+    /* Type */
+
+    --text:             #DCFCE7;
+    --text-secondary:   #ACCAB7;
+    --text-muted:       #7B9584;
+
+}
+
+
+[data-theme="holly"] {
+
+    /* 🎅 Holly */
+
+    /* Brand ramp (the mark's ring gradient) */
+
+    --ring-start:       #B91C1C;
+    --ring-mid:         #DC2626;
+    --ring-end:         #F87171;
+    --dot:              #16A34A;
+
+    /* Roles */
+
+    --primary:          #DC2626;
+    --primary-dark:     #B91C1C;
+    --primary-soft:     #EB7B7B;
+    --primary-text:     #E03B3B;
+    --primary-rgb:      220,38,38;
+    --accent:           #F87171;
+
+    /* Launcher plate gradient, for decorative brand fills */
+
+    --plate-start:      #7F1D1D;
+    --plate-mid:        #B91C1C;
+    --plate-end:        #166534;
+
+    /* Darker cut of the plate ramp, for fills that carry text */
+
+    --plate-ink-start:  #7F1D1D;
+    --plate-ink-mid:    #B91C1C;
+    --plate-ink-end:    #166534;
+    --on-plate:         #FFFFFF;
+
+    /* Surfaces */
+
+    --bg:               #1A0707;
+    --bg-rgb:           26,7,7;
+    --bg-alt:           #280F0F;
+    --surface:          #331717;
+    --surface-hover:    #452121;
+    --surface-deep:     #110505;
+
+    /* Type */
+
+    --text:             #FEE2E2;
+    --text-secondary:   #CCB2B2;
+    --text-muted:       #977F7F;
+
+}
+
+
+[data-theme="gold"] {
+
+    /* ✨ Gold */
+
+    /* Brand ramp (the mark's ring gradient) */
+
+    --ring-start:       #B45309;
+    --ring-mid:         #D4A017;
+    --ring-end:         #FDE68A;
+    --dot:              #FDE68A;
+
+    /* Roles */
+
+    --primary:          #D4A017;
+    --primary-dark:     #B45309;
+    --primary-soft:     #E6C04B;
+    --primary-text:     #D4A017;
+    --primary-rgb:      212,160,23;
+    --accent:           #FDE68A;
+
+    /* Launcher plate gradient, for decorative brand fills */
+
+    --plate-start:      #F5D77E;
+    --plate-mid:        #E0B437;
+    --plate-end:        #B8860B;
+
+    /* Darker cut of the plate ramp, for fills that carry text */
+
+    --plate-ink-start:  #F5D77E;
+    --plate-ink-mid:    #E0B437;
+    --plate-ink-end:    #B8860B;
+    --on-plate:         #2B1C02;
+
+    /* Surfaces */
+
+    --bg:               #14100A;
+    --bg-rgb:           20,16,10;
+    --bg-alt:           #221A0E;
+    --surface:          #2D2212;
+    --surface-hover:    #3F2F18;
+    --surface-deep:     #0D0A06;
+
+    /* Type */
+
+    --text:             #FDE68A;
+    --text-secondary:   #CAB76E;
+    --text-muted:       #948650;
+
+}
+
+
+[data-theme="copper"] {
+
+    /* 🥉 Copper */
+
+    /* Brand ramp (the mark's ring gradient) */
+
+    --ring-start:       #9A3412;
+    --ring-mid:         #C2410C;
+    --ring-end:         #FB923C;
+    --dot:              #FB923C;
+
+    /* Roles */
+
+    --primary:          #C2410C;
+    --primary-dark:     #9A3412;
+    --primary-soft:     #DD8E66;
+    --primary-text:     #CA5726;
+    --primary-rgb:      194,65,12;
+    --accent:           #FB923C;
+
+    /* Launcher plate gradient, for decorative brand fills */
+
+    --plate-start:      #5C2408;
+    --plate-mid:        #9A3412;
+    --plate-end:        #C2632B;
+
+    /* Darker cut of the plate ramp, for fills that carry text */
+
+    --plate-ink-start:  #5C2408;
+    --plate-ink-mid:    #9A3412;
+    --plate-ink-end:    #B65D28;
+    --on-plate:         #FFFFFF;
+
+    /* Surfaces */
+
+    --bg:               #170A04;
+    --bg-rgb:           23,10,4;
+    --bg-alt:           #24130C;
+    --surface:          #2F1B13;
+    --surface-hover:    #3F271D;
+    --surface-deep:     #0F0603;
+
+    /* Type */
+
+    --text:             #FFEDD5;
+    --text-secondary:   #CCBBA7;
+    --text-muted:       #978777;
+
+}
+
+
+[data-theme="maple"] {
+
+    /* 🍁 Maple */
+
+    /* Brand ramp (the mark's ring gradient) */
+
+    --ring-start:       #B91C1C;
+    --ring-mid:         #EA580C;
+    --ring-end:         #F59E0B;
+    --dot:              #F59E0B;
+
+    /* Roles */
+
+    --primary:          #EA580C;
+    --primary-dark:     #B91C1C;
+    --primary-soft:     #F39E60;
+    --primary-text:     #EA580C;
+    --primary-rgb:      234,88,12;
+    --accent:           #F59E0B;
+
+    /* Launcher plate gradient, for decorative brand fills */
+
+    --plate-start:      #7C2D12;
+    --plate-mid:        #B91C1C;
+    --plate-end:        #EA580C;
+
+    /* Darker cut of the plate ramp, for fills that carry text */
+
+    --plate-ink-start:  #7C2D12;
+    --plate-ink-mid:    #B91C1C;
+    --plate-ink-end:    #CC4D0A;
+    --on-plate:         #FFFFFF;
+
+    /* Surfaces */
+
+    --bg:               #1A0A06;
+    --bg-rgb:           26,10,6;
+    --bg-alt:           #28130E;
+    --surface:          #331A14;
+    --surface-hover:    #45261E;
+    --surface-deep:     #110604;
+
+    /* Type */
+
+    --text:             #FEF3C7;
+    --text-secondary:   #CCC09D;
+    --text-muted:       #978A70;
+
+}
+
+
+[data-theme="chestnut"] {
+
+    /* 🌰 Chestnut */
+
+    /* Brand ramp (the mark's ring gradient) */
+
+    --ring-start:       #5B3A1E;
+    --ring-mid:         #8B5E3C;
+    --ring-end:         #C79A6B;
+    --dot:              #C79A6B;
+
+    /* Roles */
+
+    --primary:          #8B5E3C;
+    --primary-dark:     #5B3A1E;
+    --primary-soft:     #B89980;
+    --primary-text:     #9A7252;
+    --primary-rgb:      139,94,60;
+    --accent:           #C79A6B;
+
+    /* Launcher plate gradient, for decorative brand fills */
+
+    --plate-start:      #2E1B0F;
+    --plate-mid:        #4A2C18;
+    --plate-end:        #6B4226;
+
+    /* Darker cut of the plate ramp, for fills that carry text */
+
+    --plate-ink-start:  #2E1B0F;
+    --plate-ink-mid:    #4A2C18;
+    --plate-ink-end:    #6B4226;
+    --on-plate:         #FFFFFF;
+
+    /* Surfaces */
+
+    --bg:               #150C06;
+    --bg-rgb:           21,12,6;
+    --bg-alt:           #1F150E;
+    --surface:          #281D15;
+    --surface-hover:    #35291F;
+    --surface-deep:     #0E0804;
+
+    /* Type */
+
+    --text:             #F0E2D2;
+    --text-secondary:   #C0B3A5;
+    --text-muted:       #8D8276;
+
+}
+
+
+[data-theme="pumpkin"] {
+
+    /* 🎃 Pumpkin */
+
+    /* Brand ramp (the mark's ring gradient) */
+
+    --ring-start:       #EA580C;
+    --ring-mid:         #F97316;
+    --ring-end:         #FB923C;
+    --dot:              #FB923C;
+
+    /* Roles */
+
+    --primary:          #F97316;
+    --primary-dark:     #EA580C;
+    --primary-soft:     #FCAA6C;
+    --primary-text:     #F97316;
+    --primary-rgb:      249,115,22;
+    --accent:           #FB923C;
+
+    /* Launcher plate gradient, for decorative brand fills */
+
+    --plate-start:      #1C1917;
+    --plate-mid:        #431407;
+    --plate-end:        #EA580C;
+
+    /* Darker cut of the plate ramp, for fills that carry text */
+
+    --plate-ink-start:  #1C1917;
+    --plate-ink-mid:    #431407;
+    --plate-ink-end:    #CC4D0A;
+    --on-plate:         #FFFFFF;
+
+    /* Surfaces */
+
+    --bg:               #0B0907;
+    --bg-rgb:           11,9,7;
+    --bg-alt:           #1B140E;
+    --surface:          #291D15;
+    --surface-hover:    #3E2B1E;
+    --surface-deep:     #070605;
+
+    /* Type */
+
+    --text:             #FFEDD5;
+    --text-secondary:   #C9BBA8;
+    --text-muted:       #918678;
+
+}
+
+
+[data-theme="midnight-orange"] {
+
+    /* 🌌 Midnight Orange */
+
+    /* Brand ramp (the mark's ring gradient) */
+
+    --ring-start:       #7C3AED;
+    --ring-mid:         #A855F7;
+    --ring-end:         #F97316;
+    --dot:              #F97316;
+
+    /* Roles */
+
+    --primary:          #A855F7;
+    --primary-dark:     #7C3AED;
+    --primary-soft:     #CA97FB;
+    --primary-text:     #A855F7;
+    --primary-rgb:      168,85,247;
+    --accent:           #F97316;
+
+    /* Launcher plate gradient, for decorative brand fills */
+
+    --plate-start:      #140A1F;
+    --plate-mid:        #2E1065;
+    --plate-end:        #4C1D95;
+
+    /* Darker cut of the plate ramp, for fills that carry text */
+
+    --plate-ink-start:  #140A1F;
+    --plate-ink-mid:    #2E1065;
+    --plate-ink-end:    #4C1D95;
+    --on-plate:         #FFFFFF;
+
+    /* Surfaces */
+
+    --bg:               #0A0612;
+    --bg-rgb:           10,6,18;
+    --bg-alt:           #161022;
+    --surface:          #211830;
+    --surface-hover:    #302544;
+    --surface-deep:     #06040C;
+
+    /* Type */
+
+    --text:             #F3E8FF;
+    --text-secondary:   #C0B6CB;
+    --text-muted:       #8A8294;
+
+}
+
+
+[data-theme="witching-hour"] {
+
+    /* 🧙 Witching Hour */
+
+    /* Brand ramp (the mark's ring gradient) */
+
+    --ring-start:       #4C1D95;
+    --ring-mid:         #7E22CE;
+    --ring-end:         #A3E635;
+    --dot:              #A3E635;
+
+    /* Roles */
+
+    --primary:          #7E22CE;
+    --primary-dark:     #4C1D95;
+    --primary-soft:     #B288CD;
+    --primary-text:     #9A58CD;
+    --primary-rgb:      126,34,206;
+    --accent:           #A3E635;
+
+    /* Launcher plate gradient, for decorative brand fills */
+
+    --plate-start:      #0F0A19;
+    --plate-mid:        #3B0764;
+    --plate-end:        #1A2E05;
+
+    /* Darker cut of the plate ramp, for fills that carry text */
+
+    --plate-ink-start:  #0F0A19;
+    --plate-ink-mid:    #3B0764;
+    --plate-ink-end:    #1A2E05;
+    --on-plate:         #FFFFFF;
+
+    /* Surfaces */
+
+    --bg:               #07040D;
+    --bg-rgb:           7,4,13;
+    --bg-alt:           #110E18;
+    --surface:          #1A1622;
+    --surface-hover:    #282231;
+    --surface-deep:     #050308;
+
+    /* Type */
+
+    --text:             #ECFCCB;
+    --text-secondary:   #BAC5A1;
+    --text-muted:       #858C76;
+
+}
