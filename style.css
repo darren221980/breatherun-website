@@ -95,6 +95,14 @@ img{
 
     max-width:100%;
 
+    /* Required now that every <img> carries its intrinsic
+       width/height. Those attributes let the browser reserve
+       the right box before the file arrives, but without this
+       the declared height would survive the max-width squeeze
+       and the image would render stretched. */
+
+    height:auto;
+
 }
 
 a{
@@ -301,7 +309,16 @@ nav{
 
 }
 
-.reveal{
+/* ==========================================================
+   SCROLL REVEAL
+
+   Visible is the default. The hidden state is scoped to .js,
+   which script.js sets on <html> from the page head, so a
+   reader without JavaScript gets the whole page rather than a
+   header and a footer.
+   ========================================================== */
+
+.js .reveal{
 
     opacity:0;
 
@@ -313,7 +330,7 @@ nav{
 
 }
 
-.reveal.active{
+.js .reveal.active{
 
     opacity:1;
 
@@ -378,6 +395,53 @@ nav ul{
 
 }
 
+/* The toggle only exists below the nav breakpoint; see the
+   responsive block at the foot of this file. */
+
+.nav-toggle{
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:44px;
+
+    height:44px;
+
+    padding:0;
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    background:var(--surface);
+
+    color:var(--text);
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+}
+
+.nav-toggle:hover{
+
+    border-color:var(--primary);
+
+    color:var(--primary-text);
+
+}
+
+.nav-toggle .material-symbols-rounded{
+
+    font-size:24px;
+
+    line-height:1;
+
+}
+
 nav ul li a{
 
     color:var(--text-secondary);
@@ -430,6 +494,37 @@ nav ul li a:hover{
     max-width:720px;
 
     margin:0 auto 42px;
+
+}
+
+/* Release status, sitting directly above the buttons so the
+   CTA is never read as a live download link. */
+
+.hero p.availability{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    margin:-18px auto 26px;
+
+    color:var(--text-muted);
+
+    font-size:.95rem;
+
+    font-weight:500;
+
+}
+
+.availability .material-symbols-rounded{
+
+    font-size:20px;
+
+    line-height:1;
 
 }
 
@@ -1199,6 +1294,10 @@ nav ul li a:hover{
 
 }
 
+/* Native <details>/<summary>. The disclosure behaviour, the
+   keyboard support and the open state all come free; only the
+   marker and the chevron need styling. */
+
 .faq-item{
 
     border:1px solid var(--border);
@@ -1215,11 +1314,83 @@ nav ul li a:hover{
 
 .faq-question{
 
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:20px;
+
     padding:24px 28px;
 
     font-size:1.1rem;
 
     font-weight:600;
+
+    cursor:pointer;
+
+    list-style:none;
+
+    transition:var(--transition);
+
+}
+
+/* Suppress the default triangle in every engine. */
+
+.faq-question::-webkit-details-marker{
+
+    display:none;
+
+}
+
+.faq-question::marker{
+
+    content:"";
+
+}
+
+/* Our own chevron, drawn from a border so it needs no font. */
+
+.faq-question::after{
+
+    content:"";
+
+    flex:none;
+
+    width:9px;
+
+    height:9px;
+
+    margin-right:4px;
+
+    border-right:2px solid var(--primary-text);
+
+    border-bottom:2px solid var(--primary-text);
+
+    transform:rotate(45deg) translate(-2px,-2px);
+
+    transition:transform var(--transition);
+
+}
+
+.faq-item[open] .faq-question::after{
+
+    transform:rotate(-135deg) translate(-2px,-2px);
+
+}
+
+.faq-question:hover{
+
+    color:var(--primary-text);
+
+}
+
+.faq-question:focus-visible{
+
+    outline:3px solid var(--accent);
+
+    outline-offset:-3px;
 
 }
 
@@ -1350,29 +1521,27 @@ footer{
    GENERAL ANIMATIONS
    ========================================================== */
 
-.fade-up{
+/* Driven by the same observer as .reveal, so a card no longer
+   plays its entrance while it is still below the fold. Same
+   .js scoping: no JavaScript, no hidden state. */
 
-    animation:fadeUp .8s ease both;
+.js .fade-up{
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
 
 }
 
-@keyframes fadeUp{
+.js .fade-up.active{
 
-    from{
+    opacity:1;
 
-        opacity:0;
-
-        transform:translateY(30px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
+    transform:translateY(0);
 
 }
 
@@ -1420,15 +1589,46 @@ footer{
 
 @media (max-width:992px){
 
+    /* Logo and toggle stay on one row; the links become a
+       panel below them rather than a stack that pushes the
+       hero off the screen. */
+
+    .nav-toggle{
+        display:inline-flex;
+    }
+
     nav{
-        flex-direction:column;
-        gap:20px;
+        flex-wrap:wrap;
     }
 
     nav ul{
-        gap:22px;
-        flex-wrap:wrap;
-        justify-content:center;
+        display:none;
+        width:100%;
+        flex-direction:column;
+        align-items:stretch;
+        gap:0;
+        padding-bottom:12px;
+    }
+
+    nav ul.is-open{
+        display:flex;
+    }
+
+    nav ul li a{
+        display:block;
+        padding:14px 4px;
+        border-top:1px solid var(--border);
+    }
+
+    /* No JavaScript means no toggle, so show the links
+       outright rather than hiding them behind a dead button. */
+
+    html:not(.js) .nav-toggle{
+        display:none;
+    }
+
+    html:not(.js) nav ul{
+        display:flex;
     }
 
     .footer-grid{
@@ -1493,11 +1693,6 @@ footer{
 
     .container{
         width:94%;
-    }
-
-    nav ul{
-        flex-direction:column;
-        gap:14px;
     }
 
     .badge{
@@ -1679,13 +1874,62 @@ a.inline-link:hover{
    ========================================================== */
 
 a:focus-visible,
-button:focus-visible{
+button:focus-visible,
+summary:focus-visible{
 
     outline:3px solid var(--accent);
 
     outline-offset:4px;
 
     border-radius:8px;
+
+}
+
+/* Off-screen until tabbed to, so keyboard and screen reader
+   users can skip the nav on every page. */
+
+.skip-link{
+
+    position:absolute;
+
+    top:0;
+
+    left:16px;
+
+    z-index:1000;
+
+    padding:12px 20px;
+
+    border-radius:0 0 12px 12px;
+
+    /* Same plate ramp as .btn-primary, which is the pairing
+       that clears AA in all eighteen themes. */
+
+    background:var(--plate-ink-mid);
+
+    color:var(--on-plate);
+
+    font-weight:600;
+
+    transform:translateY(-120%);
+
+    transition:transform var(--transition);
+
+}
+
+.skip-link:focus{
+
+    transform:translateY(0);
+
+}
+
+/* <main tabindex="-1"> is the skip link's target, so focus
+   really does move rather than only the scroll position. It
+   is not an interactive control, so it takes no focus ring. */
+
+main:focus{
+
+    outline:none;
 
 }
 
@@ -1734,6 +1978,19 @@ button:focus-visible{
 
     }
 
+    /* script.js already marks everything active in this case,
+       but with transitions off a failed script would leave the
+       page blank. Belt and braces. */
+
+    .js .reveal,
+    .js .fade-up{
+
+        opacity:1 !important;
+
+        transform:none !important;
+
+    }
+
 }
 
 
@@ -1749,20 +2006,27 @@ button:focus-visible{
 
 }
 
+/* Both properties, so one set of delay classes works whether
+   the element is animated (.fade) or transitioned (.fade-up). */
+
 .delay-1{
     animation-delay:.15s;
+    transition-delay:.15s;
 }
 
 .delay-2{
     animation-delay:.30s;
+    transition-delay:.30s;
 }
 
 .delay-3{
     animation-delay:.45s;
+    transition-delay:.45s;
 }
 
 .delay-4{
     animation-delay:.60s;
+    transition-delay:.60s;
 }
 
 @keyframes fadeIn{
