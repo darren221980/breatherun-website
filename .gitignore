@@ -1,2 +1,9 @@
 .DS_Store
 Thumbs.db
+
+# The brand asset pack is kept outside this repo. tools/ locates it via
+# --brand, $BREATHERUN_BRAND or the path saved here on first run.
+.brandpath
+
+# A local copy of the pack, if you'd rather keep one alongside the site.
+/brand/

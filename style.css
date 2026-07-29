@@ -6,36 +6,24 @@
 
 
 /* ==========================================================
-   GOOGLE FONT
-   ========================================================== */
+   TYPEFACE
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+   Manrope, per the brand guidelines. Loaded via <link> in each
+   page head rather than @import, which blocks rendering.
+   ========================================================== */
 
 
 /* ==========================================================
-   CSS VARIABLES
+   NON-THEME TOKENS
+
+   Every colour lives in themes.css, keyed off the data-theme
+   attribute on <html>. Only geometry and motion sit here, so
+   a theme swap never has to touch this file.
+
+   To change the active theme:  ./tools/switch-theme.sh <name>
    ========================================================== */
 
 :root {
-
-    /* Colours */
-
-    --bg: #0F172A;
-    --bg-alt: #172236;
-
-    --surface: #1E293B;
-    --surface-hover: #27364A;
-
-    --primary: #4F8EF7;
-    --primary-dark: #3D79DB;
-
-    --accent: #22C7A9;
-
-    --text: #F8FAFC;
-    --text-secondary: #CBD5E1;
-    --text-muted: #94A3B8;
-
-    --border: rgba(255,255,255,.08);
 
     /* Layout */
 
@@ -43,6 +31,11 @@
 
     --radius:16px;
     --radius-lg:28px;
+
+    /* Hairlines. Every theme surface is dark, so one value works
+       across all eighteen. */
+
+    --border: rgba(255,255,255,.08);
 
     /* Shadows */
 
@@ -86,7 +79,7 @@ body{
 
     color:var(--text);
 
-    font-family:'Inter',sans-serif;
+    font-family:'Manrope',system-ui,-apple-system,sans-serif;
 
     line-height:1.7;
 
@@ -253,7 +246,7 @@ header{
 
     z-index:999;
 
-    background:rgba(10,20,30,.75);
+    background:rgba(var(--bg-rgb),.78);
 
     backdrop-filter:blur(18px);
 
@@ -280,25 +273,31 @@ nav{
 
 .logo{
 
-    display:flex;
+    display:inline-flex;
 
     align-items:center;
 
-    gap:14px;
-
-    font-weight:700;
-
-    font-size:1.2rem;
-
 }
+
+/* The horizontal lockup already contains the wordmark as
+   outlined paths, so no text sits beside it and no circular
+   crop is applied. Clear space is built into the viewBox. */
 
 .logo img{
 
-    width:44px;
+    height:38px;
 
-    height:44px;
+    width:auto;
 
-    border-radius:50%;
+}
+
+@media (max-width:520px){
+
+    .logo img{
+
+        height:32px;
+
+    }
 
 }
 
@@ -391,7 +390,7 @@ nav ul li a{
 
 nav ul li a:hover{
 
-    color:white;
+    color:var(--text);
 
 }
 
@@ -416,8 +415,8 @@ nav ul li a:hover{
 
     background:linear-gradient(
         90deg,
-        #ffffff,
-        #8ad5ff
+        var(--text),
+        var(--ring-end)
     );
 
     -webkit-background-clip:text;
@@ -447,11 +446,11 @@ nav ul li a:hover{
 
     gap:10px;
 
-    background:rgba(79,142,247,.12);
+    background:rgba(var(--primary-rgb),.12);
 
-    border:1px solid rgba(79,142,247,.25);
+    border:1px solid rgba(var(--primary-rgb),.25);
 
-    color:#AFCBFF;
+    color:var(--primary-soft);
 
     padding:10px 18px;
 
@@ -500,19 +499,31 @@ nav ul li a:hover{
 
 .btn-primary{
 
-    background:var(--primary);
+    /* The launcher plate gradient. White on flat --primary only
+       reaches ~2.4:1, the plate ramp clears AA. */
 
-    color:white;
+    background:linear-gradient(
+        135deg,
+        var(--plate-ink-start),
+        var(--plate-ink-mid) 55%,
+        var(--plate-ink-end)
+    );
+
+    color:var(--on-plate);
 
 }
 
 .btn-primary:hover{
 
-    background:var(--primary-dark);
+    background:linear-gradient(
+        135deg,
+        var(--plate-ink-mid),
+        var(--plate-ink-end)
+    );
 
     transform:translateY(-3px);
 
-    box-shadow:0 12px 28px rgba(79,142,247,.35);
+    box-shadow:0 12px 28px rgba(var(--primary-rgb),.35);
 
 }
 
@@ -520,7 +531,7 @@ nav ul li a:hover{
 
     border:1px solid var(--border);
 
-    color:white;
+    color:var(--text);
 
 }
 
@@ -548,7 +559,7 @@ nav ul li a:hover{
     background:
 
         radial-gradient(circle,
-        rgba(79,142,247,.28),
+        rgba(var(--primary-rgb),.28),
         transparent 72%);
 
     left:50%;
@@ -723,7 +734,7 @@ nav ul li a:hover{
 
     background:linear-gradient(
         180deg,
-        rgba(79,142,247,.08),
+        rgba(var(--primary-rgb),.08),
         transparent 55%
     );
 
@@ -752,9 +763,9 @@ nav ul li a:hover{
 
     border-radius:20px;
 
-    background:rgba(79,142,247,.12);
+    background:rgba(var(--primary-rgb),.12);
 
-    color:var(--primary);
+    color:var(--primary-text);
 
 }
 
@@ -841,9 +852,13 @@ nav ul li a:hover{
 
     border-radius:50%;
 
-    background:var(--primary);
+    background:linear-gradient(
+        135deg,
+        var(--plate-ink-start),
+        var(--plate-ink-end)
+    );
 
-    color:white;
+    color:var(--on-plate);
 
     font-weight:700;
 
@@ -882,7 +897,7 @@ nav ul li a:hover{
 
     position:relative;
 
-    background:#0B1120;
+    background:var(--surface-deep);
 
     border-radius:42px;
 
@@ -924,7 +939,7 @@ nav ul li a:hover{
 
     top:10px;
 
-    background:#222;
+    background:rgba(255,255,255,.14);
 
     border-radius:100px;
 
@@ -962,7 +977,7 @@ nav ul li a:hover{
 
     padding:14px;
 
-    background:#101827;
+    background:var(--bg-alt);
 
     box-shadow:
         0 35px 80px rgba(0,0,0,.35),
@@ -1228,7 +1243,7 @@ nav ul li a:hover{
     background:linear-gradient(
         180deg,
         transparent,
-        rgba(79,142,247,.08)
+        rgba(var(--primary-rgb),.08)
     );
 
 }
@@ -1258,7 +1273,7 @@ footer{
 
     border-top:1px solid var(--border);
 
-    background:#0B1220;
+    background:var(--surface-deep);
 
 }
 
@@ -1312,7 +1327,7 @@ footer{
 
 .footer-links a:hover{
 
-    color:white;
+    color:var(--text);
 
 }
 
@@ -1556,7 +1571,7 @@ footer{
 
 .legal-page a{
 
-    color:var(--primary);
+    color:var(--primary-text);
 
 }
 
@@ -1627,9 +1642,9 @@ footer{
 
     border-radius:50%;
 
-    background:rgba(79,142,247,.12);
+    background:rgba(var(--primary-rgb),.12);
 
-    color:var(--primary);
+    color:var(--primary-text);
 
 }
 
@@ -1646,7 +1661,7 @@ footer{
 
 a.inline-link{
 
-    color:var(--primary);
+    color:var(--primary-text);
 
     transition:var(--transition);
 
@@ -1654,7 +1669,7 @@ a.inline-link{
 
 a.inline-link:hover{
 
-    color:#7FB0FF;
+    color:var(--primary-soft);
 
 }
 
@@ -1676,9 +1691,9 @@ button:focus-visible{
 
 ::selection{
 
-    background:#3AA5F5;
+    background:var(--primary-text);
 
-    color:white;
+    color:var(--bg);
 
 }
 
@@ -1690,13 +1705,13 @@ button:focus-visible{
 
 ::-webkit-scrollbar-track{
 
-    background:#07121d;
+    background:var(--surface-deep);
 
 }
 
 ::-webkit-scrollbar-thumb{
 
-    background:#3AA5F5;
+    background:var(--primary);
 
     border-radius:20px;
 
@@ -1799,7 +1814,7 @@ button:focus-visible{
 
 .legal-page h2 .material-symbols-rounded{
 
-    color:var(--primary);
+    color:var(--primary-text);
 
     font-size:30px;
 
