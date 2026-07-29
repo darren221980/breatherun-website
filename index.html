@@ -6,6 +6,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Marks the document as scripted before first paint. Every
+         hidden-until-revealed rule in style.css is scoped to .js,
+         so with JavaScript off the page renders in full. -->
+
+    <script>document.documentElement.classList.add("js");</script>
+
     <title>BreatheRun | Audio-Guided Breathing for Better Running</title>
 
     <meta name="description"
@@ -87,9 +93,82 @@
     <link rel="stylesheet" href="themes.css">
     <link rel="stylesheet" href="style.css">
 
+    <!-- Structured data -->
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "BreatheRun",
+        "applicationCategory": "HealthApplication",
+        "applicationSubCategory": "Running",
+        "operatingSystem": "Android",
+        "description": "BreatheRun combines guided breathing, GPS tracking and simple audio coaching to help runners build confidence, improve endurance and enjoy every run.",
+        "url": "https://breatherun.com/",
+        "image": "https://breatherun.com/images/social-preview.png",
+        "softwareVersion": "1.0.0-beta1",
+        "releaseNotes": "Currently in beta. Coming soon to Google Play.",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "GBP",
+            "availability": "https://schema.org/PreOrder"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "BreatheRun",
+            "url": "https://breatherun.com/",
+            "logo": "https://breatherun.com/images/brand/logo-horizontal.svg"
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Why does BreatheRun need my location?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Location is used only while recording a run so the app can measure your route, distance and pace."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do I need to create an account?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. BreatheRun is designed to work without requiring you to sign up before you can start running."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does the app work offline?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Most running features work without an internet connection. GPS tracking continues while you're out on your run."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is BreatheRun suitable for beginners?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Absolutely. BreatheRun has been designed specifically to help new and returning runners build confidence through guided breathing and simple coaching."
+                }
+            }
+        ]
+    }
+    </script>
+
 </head>
 
 <body>
+
+<a href="#main" class="skip-link">Skip to content</a>
 
 <header>
 
@@ -100,12 +179,22 @@
 <a href="index.html" class="logo">
 
 <img src="images/brand/logo-horizontal.svg"
-     width="700" height="200"
+     width="133" height="38"
      alt="BreatheRun">
 
 </a>
 
-<ul>
+<button class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-nav"
+        aria-label="Menu">
+
+<span class="material-symbols-rounded" aria-hidden="true">menu</span>
+
+</button>
+
+<ul id="primary-nav">
 
 <li><a href="#built-for">Built For</a></li>
 
@@ -124,6 +213,8 @@
 </div>
 
 </header>
+
+<main id="main" tabindex="-1">
 
 <!-- ==========================================================
      HERO
@@ -155,23 +246,31 @@ improve endurance and enjoy every run.
 
 </p>
 
+<p class="availability">
+
+<span class="material-symbols-rounded" aria-hidden="true">schedule</span>
+Coming soon to Google Play
+
+</p>
+
 <div class="buttons">
 
-<a href="#preview" class="btn btn-primary">
+<a href="mailto:support@breatherun.com?subject=Notify%20me%20when%20BreatheRun%20launches"
+   class="btn btn-primary">
 
-Explore the App
+Email me at launch
 
 </a>
 
-<a href="privacy.html" class="btn btn-secondary">
+<a href="#preview" class="btn btn-secondary">
 
-Privacy First
+See the app
 
 </a>
 
 </div>
 
-<div class="scroll-down">
+<div class="scroll-down" aria-hidden="true">
 
 ↓
 
@@ -179,9 +278,17 @@ Privacy First
 
 <div class="hero-phone">
 
-<img
-    src="images/hero.png"
-    alt="BreatheRun App Screenshot">
+<picture>
+
+<source srcset="images/home.webp" type="image/webp">
+
+<img src="images/home.png"
+     width="720" height="1600"
+     fetchpriority="high"
+     decoding="async"
+     alt="The BreatheRun home screen, showing today's breathing session and this week's running totals.">
+
+</picture>
 
 </div>
 
@@ -193,7 +300,7 @@ Privacy First
      BUILT FOR
 =========================================================== -->
 
-<section id="built-for" class="built-for">
+<section id="built-for" class="built-for reveal">
 
     <div class="container">
 
@@ -211,7 +318,7 @@ Privacy First
             <article class="built-card fade-up">
 
                 <div class="built-icon">
-                    <span class="material-symbols-rounded">
+                    <span class="material-symbols-rounded" aria-hidden="true">
                     directions_run
                     </span>
                 </div>
@@ -228,7 +335,7 @@ Privacy First
             <article class="built-card fade-up delay-1">
 
                 <div class="built-icon">
-                    <span class="material-symbols-rounded">
+                    <span class="material-symbols-rounded" aria-hidden="true">
                     replay
                     </span>
                 </div>
@@ -245,7 +352,7 @@ Privacy First
             <article class="built-card fade-up delay-2">
 
                 <div class="built-icon">
-                    <span class="material-symbols-rounded">
+                    <span class="material-symbols-rounded" aria-hidden="true">
                     air
                     </span>
                 </div>
@@ -262,7 +369,7 @@ Privacy First
             <article class="built-card fade-up delay-3">
 
                 <div class="built-icon">
-                    <span class="material-symbols-rounded">
+                    <span class="material-symbols-rounded" aria-hidden="true">
                     headphones
                     </span>
                 </div>
@@ -287,7 +394,7 @@ Privacy First
      FEATURES
 =========================================================== -->
 
-<section id="features" class="features">
+<section id="features" class="features reveal">
 
     <div class="container">
 
@@ -296,7 +403,7 @@ Privacy First
         </h2>
 
         <p class="section-subtitle">
-            BreatheRun keeps things simple. No complicated dashboards—just the tools
+            BreatheRun keeps things simple. No complicated dashboards, just the tools
             that help you stay consistent.
         </p>
 
@@ -304,7 +411,7 @@ Privacy First
 
             <article class="feature">
 
-                <div class="feature-number">1</div>
+                <div class="feature-number" aria-hidden="true">1</div>
 
                 <h3>Guided Breathing</h3>
 
@@ -317,7 +424,7 @@ Privacy First
 
             <article class="feature">
 
-                <div class="feature-number">2</div>
+                <div class="feature-number" aria-hidden="true">2</div>
 
                 <h3>GPS Run Tracking</h3>
 
@@ -330,7 +437,7 @@ Privacy First
 
             <article class="feature">
 
-                <div class="feature-number">3</div>
+                <div class="feature-number" aria-hidden="true">3</div>
 
                 <h3>Progress Tracking</h3>
 
@@ -343,12 +450,12 @@ Privacy First
 
             <article class="feature">
 
-                <div class="feature-number">4</div>
+                <div class="feature-number" aria-hidden="true">4</div>
 
                 <h3>Simple Experience</h3>
 
                 <p>
-                    No accounts, no unnecessary complexity—just open the app and run.
+                    No accounts, no unnecessary complexity. Just open the app and run.
                 </p>
 
             </article>
@@ -368,46 +475,74 @@ Privacy First
 
 <div class="container">
 
-<div class="section-title">
+<h2 class="section-title">Designed for runners.</h2>
 
-<h2>Designed for runners.</h2>
-
-<p>
+<p class="section-subtitle">
 
 Simple when you need it.
 Powerful when it matters.
 
 </p>
 
-</div>
-
 <div class="showcase">
 
 <div class="phone phone-main">
 
+<picture>
+
+<source srcset="images/run.webp" type="image/webp">
+
 <img src="images/run.png"
-     alt="Run Screen">
+     width="720" height="1600"
+     loading="lazy" decoding="async"
+     alt="The run screen, ready to start a guided session.">
+
+</picture>
 
 </div>
 
 <div class="phone phone-left">
 
-<img src="images/home.png"
-     alt="Home">
+<picture>
+
+<source srcset="images/welcome.webp" type="image/webp">
+
+<img src="images/welcome.png"
+     width="720" height="1600"
+     loading="lazy" decoding="async"
+     alt="The welcome screen introducing BreatheRun.">
+
+</picture>
 
 </div>
 
 <div class="phone phone-right">
 
+<picture>
+
+<source srcset="images/progress.webp" type="image/webp">
+
 <img src="images/progress.png"
-     alt="Progress">
+     width="720" height="1600"
+     loading="lazy" decoding="async"
+     alt="The progress screen, listing recent runs.">
+
+</picture>
 
 </div>
 
 <div class="phone phone-bottom">
 
+<picture>
+
+<source srcset="images/plans.webp" type="image/webp">
+
 <img src="images/plans.png"
-     alt="Plans">
+     width="720" height="1600"
+     loading="lazy" decoding="async"
+     alt="The programmes screen, showing the beginner breathing rhythm.">
+
+</picture>
 
 </div>
 
@@ -430,7 +565,7 @@ Powerful when it matters.
         </h2>
 
         <p class="section-subtitle">
-            BreatheRun is designed to help you run—not collect your personal data.
+            BreatheRun is designed to help you run, not collect your personal data.
             We only use the permissions needed to deliver the features you choose.
         </p>
 
@@ -486,6 +621,9 @@ Powerful when it matters.
 
 <!-- ==========================================================
      FAQ
+
+     Native <details>/<summary>: keyboard accessible, works with
+     JavaScript disabled, and no handler to keep in sync.
 =========================================================== -->
 
 <section class="faq reveal">
@@ -502,50 +640,50 @@ Powerful when it matters.
 
         <div class="faq-container">
 
-            <div class="faq-item">
+            <details class="faq-item">
 
-                <div class="faq-question">
+                <summary class="faq-question">
                     Why does BreatheRun need my location?
-                </div>
+                </summary>
 
                 <div class="faq-answer">
                     Location is used only while recording a run so the app can
                     measure your route, distance and pace.
                 </div>
 
-            </div>
+            </details>
 
-            <div class="faq-item">
+            <details class="faq-item">
 
-                <div class="faq-question">
+                <summary class="faq-question">
                     Do I need to create an account?
-                </div>
+                </summary>
 
                 <div class="faq-answer">
                     No. BreatheRun is designed to work without requiring you to
                     sign up before you can start running.
                 </div>
 
-            </div>
+            </details>
 
-            <div class="faq-item">
+            <details class="faq-item">
 
-                <div class="faq-question">
+                <summary class="faq-question">
                     Does the app work offline?
-                </div>
+                </summary>
 
                 <div class="faq-answer">
                     Most running features work without an internet connection.
                     GPS tracking continues while you're out on your run.
                 </div>
 
-            </div>
+            </details>
 
-            <div class="faq-item">
+            <details class="faq-item">
 
-                <div class="faq-question">
+                <summary class="faq-question">
                     Is BreatheRun suitable for beginners?
-                </div>
+                </summary>
 
                 <div class="faq-answer">
                     Absolutely. BreatheRun has been designed specifically to help
@@ -553,7 +691,7 @@ Powerful when it matters.
                     breathing and simple coaching.
                 </div>
 
-            </div>
+            </details>
 
         </div>
 
@@ -575,14 +713,15 @@ Powerful when it matters.
         </h2>
 
         <p>
-            Discover how guided breathing and simple audio coaching can help
-            make every run feel more comfortable.
+            BreatheRun is in beta and coming soon to Google Play. Leave us your
+            email and we'll let you know the moment it's ready.
         </p>
 
         <div class="buttons">
 
-            <a href="#preview" class="btn btn-primary">
-                Explore the App
+            <a href="mailto:support@breatherun.com?subject=Notify%20me%20when%20BreatheRun%20launches"
+               class="btn btn-primary">
+                Email me at launch
             </a>
 
             <a href="support.html" class="btn btn-secondary">
@@ -594,6 +733,8 @@ Powerful when it matters.
     </div>
 
 </section>
+
+</main>
 
 
 <!-- ==========================================================
@@ -611,7 +752,7 @@ Powerful when it matters.
                 <a href="index.html" class="logo">
 
                     <img src="images/brand/logo-horizontal.svg"
-                         width="700" height="200"
+                         width="133" height="38"
                          alt="BreatheRun">
 
                 </a>
@@ -631,9 +772,9 @@ Powerful when it matters.
 
                     <li><a href="index.html">Home</a></li>
 
-                    <li><a href="#features">Features</a></li>
+                    <li><a href="index.html#features">Features</a></li>
 
-                    <li><a href="#preview">Preview</a></li>
+                    <li><a href="index.html#preview">Preview</a></li>
 
                 </ul>
 

@@ -99,10 +99,40 @@ cards stay tinted rather than grey, and two ramps are contrast-corrected:
 
 Do not hand-edit `themes.css`, it gets overwritten.
 
+## Progressive enhancement
+
+Scroll reveals are opt-in, not opt-out. Each page head runs one line that adds
+`js` to `<html>`, and every hidden-until-revealed rule in `style.css` is scoped
+to `.js`. So the ordering is: content visible by default, hidden only once we
+know script will run, revealed by `script.js`. With JavaScript off the page
+renders in full rather than as a header and a footer.
+
+The same scoping covers the mobile nav. `html:not(.js)` shows the link list
+outright and hides the toggle, so the button is never a dead control.
+
+`script.js` drives `.reveal` (whole sections) and `.fade-up` (cards) from one
+IntersectionObserver, so a card cannot play its entrance while it is still
+below the fold. Under `prefers-reduced-motion` it marks everything active up
+front and observes nothing.
+
+## Images
+
+Screenshots ship at 720px wide, twice the largest size they are ever drawn at,
+as `.webp` with a `.png` fallback in a `<picture>`. Every `<img>` carries its
+intrinsic `width`/`height` so the browser reserves the right box before the
+file lands; the global `img` rule sets `height:auto` to keep that from
+stretching anything. Preview screenshots are lazy-loaded, the hero is not.
+
+The social card stays PNG at 1200x630. Some scrapers still refuse WebP.
+
 ## Notes
 
 - Typeface is Manrope, loaded via `<link>` rather than `@import`, which blocks
   rendering.
+- The FAQ is native `<details>`/`<summary>`. Disclosure, keyboard support and
+  the open state come free; only the marker and chevron are styled.
+- `index.html` carries `SoftwareApplication` and `FAQPage` JSON-LD. The FAQ
+  copy is in both the markup and the schema, so edits have to be made twice.
 - Logo lockups contain the wordmark as outlined paths, so no text sits beside
   them in the markup and no font is needed to render them.
 - Every theme surface is dark, including Ice, Snow and Gold. Only their

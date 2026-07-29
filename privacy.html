@@ -6,6 +6,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Marks the document as scripted before first paint. Every
+         hidden-until-revealed rule in style.css is scoped to .js,
+         so with JavaScript off the page renders in full. -->
+
+    <script>document.documentElement.classList.add("js");</script>
+
     <title>Privacy Policy | BreatheRun</title>
 
     <meta name="description"
@@ -73,6 +79,8 @@
 
 <body>
 
+<a href="#main" class="skip-link">Skip to content</a>
+
 <header>
 
     <div class="container">
@@ -82,12 +90,22 @@
             <a href="index.html" class="logo">
 
                 <img src="images/brand/logo-horizontal.svg"
-                     width="700" height="200"
+                     width="133" height="38"
                      alt="BreatheRun">
 
             </a>
 
-            <ul>
+            <button class="nav-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="primary-nav"
+                    aria-label="Menu">
+
+                <span class="material-symbols-rounded" aria-hidden="true">menu</span>
+
+            </button>
+
+            <ul id="primary-nav">
 
                 <li><a href="index.html">Home</a></li>
                 <li><a href="support.html">Support</a></li>
@@ -100,6 +118,8 @@
 
 </header>
 
+
+<main id="main" tabindex="-1">
 
 <section class="legal-page">
 
@@ -128,7 +148,7 @@
 
         <h2>
 
-            <span class="material-symbols-rounded">
+            <span class="material-symbols-rounded" aria-hidden="true">
                 location_on
             </span>
 
@@ -168,7 +188,7 @@
 
         <h2>
 
-            <span class="material-symbols-rounded">
+            <span class="material-symbols-rounded" aria-hidden="true">
                 settings
             </span>
 
@@ -199,7 +219,7 @@
 
         <h2>
 
-            <span class="material-symbols-rounded">
+            <span class="material-symbols-rounded" aria-hidden="true">
                 shield_lock
             </span>
 
@@ -220,7 +240,7 @@
 
         <h2>
 
-            <span class="material-symbols-rounded">
+            <span class="material-symbols-rounded" aria-hidden="true">
                 cloud
             </span>
 
@@ -241,7 +261,7 @@
 
         <h2>
 
-            <span class="material-symbols-rounded">
+            <span class="material-symbols-rounded" aria-hidden="true">
                 tune
             </span>
 
@@ -263,7 +283,7 @@
 
         <h2>
 
-            <span class="material-symbols-rounded">
+            <span class="material-symbols-rounded" aria-hidden="true">
                 child_care
             </span>
 
@@ -282,7 +302,7 @@
 
         <h2>
 
-            <span class="material-symbols-rounded">
+            <span class="material-symbols-rounded" aria-hidden="true">
                 update
             </span>
 
@@ -303,7 +323,7 @@
 
         <h2>
 
-            <span class="material-symbols-rounded">
+            <span class="material-symbols-rounded" aria-hidden="true">
                 support_agent
             </span>
 
@@ -346,6 +366,8 @@
 
 </section>
 
+</main>
+
 
 <!-- ==========================================================
      FOOTER
@@ -362,7 +384,7 @@
                 <a href="index.html" class="logo">
 
                     <img src="images/brand/logo-horizontal.svg"
-                         width="700" height="200"
+                         width="133" height="38"
                          alt="BreatheRun">
 
                 </a>
@@ -382,9 +404,9 @@
 
                     <li><a href="index.html">Home</a></li>
 
-                    <li><a href="#features">Features</a></li>
+                    <li><a href="index.html#features">Features</a></li>
 
-                    <li><a href="#preview">Preview</a></li>
+                    <li><a href="index.html#preview">Preview</a></li>
 
                 </ul>
 
@@ -415,6 +437,8 @@
     </div>
 
 </footer>
+
+<script src="script.js"></script>
 
 </body>
 
